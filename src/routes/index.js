@@ -5,6 +5,7 @@ import Error from "../pages/Error";
 import Home from "../pages/Home";
 import BooksView from "../fetaures/books/BooksView";
 import AddBook from "../fetaures/books/AddBook";
+import EditBook from "../fetaures/books/EditBook";
 
 const Index = () => {
   return (

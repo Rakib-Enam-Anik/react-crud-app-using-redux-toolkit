@@ -11,7 +11,7 @@ const AddBook = () => {
   const [author, setAuthor] = useState("");
   const dispatch = useDispatch();
   const navigate = useDispatch();
-  const numberofBooks = useSelector((state) => state.booksReducer.books.length);
+
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,3 +45,5 @@ const AddBook = () => {
 };
 
 export default AddBook;
+
+//CRUD -> CREATE, READ,

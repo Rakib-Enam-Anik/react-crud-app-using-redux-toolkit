@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { updatebook } from "./BookSlice";
 
 const  EditBook = () => {
 
   const location = useLocation();
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [id, setId] = useState(location.state.id);
   const [title, setTitle] = useState(location.state.title);
@@ -16,7 +17,7 @@ const  EditBook = () => {
     e.preventDefafult();
     dispatch(updateBook({id, title, author}));
     navigate("/show-books", { replace: true });
-  }
+  };
 
   return (
     <div>
@@ -40,4 +41,4 @@ const  EditBook = () => {
   );
 };
 
-export default EditBook
+export default EditBook;

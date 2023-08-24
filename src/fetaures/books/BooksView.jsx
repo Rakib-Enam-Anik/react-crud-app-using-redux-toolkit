@@ -1,12 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { deleteBook } from "./BookSlice";
 
 const  BooksView = () => {
   const books = useSelector((state) => state.booksReducer.books);
   const dispatch = useDispatch();
-
   const handleDeleteBook = (id) => {
-        
+        dispatch(deleteBook(id));
   }
   return (
     <div>
@@ -24,7 +25,6 @@ const  BooksView = () => {
           {books &&
            books.map((book)=> {
             const {id, title, author } = book;
-            console.log(book);
             return (
             <tr key={id}>
               <td>{id}</td>
@@ -37,7 +37,7 @@ const  BooksView = () => {
                 <button onClick={()=>{handleDeleteBook(id)}}>Delete</button>
               </td>
             </tr>
-          })}
+          );
         </tbody>
       </table>
     </div>
